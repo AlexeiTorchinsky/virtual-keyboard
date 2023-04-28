@@ -47,14 +47,18 @@
 }
 .key:hover {
   background-color: rgb(182, 180, 180);
+  cursor: pointer;
 }
 .key:active {
   background-color: rgb(134, 133, 133);
   transform: scale(0.95);
+  border-radius: 4px;
+
 }
 .key.active {
   background-color: rgb(134, 133, 133);
   transform: scale(0.95);
+  border-radius: 4px;
 }
 .key-space {
   width: 460px;
