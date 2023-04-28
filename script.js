@@ -3,7 +3,10 @@
 // };
 const textArea = document.createElement('textarea');
 textArea.className = 'textarea';
-// document.body.append(textArea);
+
+const osType = document.createElement('span');
+osType.className = 'os-type';
+osType.textContent = 'Virtual keyboard was created in Windows 10';
 
 const keys = [
   ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', '\\', '←'],
@@ -65,7 +68,7 @@ const bodyAppend = (...items) => {
 //     });
 //   }
 // };
-bodyAppend(textArea, keyboard);
+bodyAppend(textArea, keyboard, osType);
 window.addEventListener('keydown', (event) => {
   const key = event.key.toLowerCase();
   const buttons = keyboard.querySelectorAll('.key');

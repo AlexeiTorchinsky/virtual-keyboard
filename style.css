@@ -5,6 +5,14 @@
   margin: 0 auto;
   font-size: 1.5rem;
 }
+.os-type {
+  display: block;
+  margin: 50px auto;
+  font-size: 24px;
+  font-family: 'Sora', sans-serif;
+  color: rgb(80, 83, 74);
+  text-align: center;
+}
 .keyboard {
   display: flex;
   flex-direction: column;
