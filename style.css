@@ -3,6 +3,7 @@
   width: 885px;
   height: 200px;
   margin: 0 auto;
+  font-size: 1.5rem;
 }
 .keyboard {
   display: flex;
@@ -31,7 +32,8 @@
   border: none;
   border-radius: 2px;
   font-size: 24px;
-  font-weight: 600;
+  font-family: 'Sora', sans-serif;
+  font-weight: 500;
   color: rgb(80, 83, 74);
   background-color: rgb(202, 198, 198);
 }

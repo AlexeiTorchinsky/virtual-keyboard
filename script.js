@@ -3,7 +3,7 @@
 // };
 const textArea = document.createElement('textarea');
 textArea.className = 'textarea';
-document.body.append(textArea);
+// document.body.append(textArea);
 
 const keys = [
   ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', '\\', '←'],
@@ -38,10 +38,16 @@ for (let i = 0; i < keys.length; i += 1) {
     if (key.textContent === 'Ctrl' || key.textContent === 'Alt') {
       key.classList.add('key-ctrl');
     }
-    row.appendChild(key);
+    row.append(key);
   }
 
-  keyboard.appendChild(row);
+  keyboard.append(row);
 }
 
-document.body.appendChild(keyboard);
+const bodyAppend = (...items) => {
+  items.forEach((item) => document.body.append(item));
+};
+
+bodyAppend(textArea, keyboard);
+
+// document.body.append(keyboard);
