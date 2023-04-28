@@ -32,22 +32,55 @@ for (let i = 0; i < keys.length; i += 1) {
     if (key.textContent === 'Caps Lock' || key.textContent === 'Enter') {
       key.classList.add('key-enter');
     }
+    if (key.textContent === 'Caps Lock') {
+      key.addEventListener('click', () => {
+        key.classList.toggle('_active');
+      });
+    }
     if (key.textContent === 'Shift') {
       key.classList.add('key-shift');
     }
     if (key.textContent === 'Ctrl' || key.textContent === 'Alt') {
       key.classList.add('key-ctrl');
     }
-    row.append(key);
+    key.addEventListener('click', () => {
+      if (!key.classList.contains('key-tab') && !key.classList.contains('key-enter') && !key.classList.contains('key-shift') && !key.classList.contains('key-ctrl') && key.textContent !== ('←')) {
+        textArea.value += key.textContent;
+      }
+    });
+    row.appendChild(key);
   }
 
-  keyboard.append(row);
+  keyboard.appendChild(row);
 }
 
 const bodyAppend = (...items) => {
-  items.forEach((item) => document.body.append(item));
+  items.forEach((item) => document.body.appendChild(item));
 };
 
+// const toggleCapsLock = () => {
+//   if (key.textContent === 'Caps Lock') {
+//     key.addEventListener('click', () => {
+//       key.classList.toggle('_active');
+//     });
+//   }
+// };
 bodyAppend(textArea, keyboard);
-
-// document.body.append(keyboard);
+window.addEventListener('keydown', (event) => {
+  const key = event.key.toLowerCase();
+  const buttons = keyboard.querySelectorAll('.key');
+  buttons.forEach((button) => {
+    if (button.textContent.toLowerCase() === key) {
+      button.classList.add('active');
+    }
+  });
+});
+window.addEventListener('keyup', (event) => {
+  const key = event.key.toLowerCase();
+  const buttons = keyboard.querySelectorAll('.key');
+  buttons.forEach((button) => {
+    if (button.textContent.toLowerCase() === key) {
+      button.classList.remove('active');
+    }
+  });
+});

@@ -44,6 +44,10 @@
   background-color: rgb(134, 133, 133);
   transform: scale(0.95);
 }
+.key.active {
+  background-color: rgb(134, 133, 133);
+  transform: scale(0.95);
+}
 .key-space {
   width: 460px;
 }
