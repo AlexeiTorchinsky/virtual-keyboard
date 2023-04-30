@@ -1,7 +1,3 @@
-/* eslint-disable max-len */
-// window.onload = function() {
-//   // code to generate virtual keyboard goes here
-// };
 const textArea = document.createElement('textarea');
 textArea.className = 'textarea';
 
@@ -37,9 +33,6 @@ const keyboard = document.createElement('div');
 keyboard.classList.add('keyboard');
 const currentKeyboard = keyboard;
 function createKeyboard() {
-  // if (!english) {
-  //   keys = keysRu;
-  // }
   while (currentKeyboard.firstChild) {
     currentKeyboard.removeChild(currentKeyboard.firstChild);
   }
