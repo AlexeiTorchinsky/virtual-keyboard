@@ -1,0 +1,89 @@
+.textarea {
+  display: block;
+  width: 885px;
+  height: 200px;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+.os-type {
+  display: block;
+  margin: 0 auto;
+  font-size: 24px;
+  font-family: 'Sora', sans-serif;
+  color: rgb(80, 83, 74);
+  text-align: center;
+}
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 885px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  border: none;
+  border-radius: 2px;
+  font-size: 24px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 500;
+  color: rgb(80, 83, 74);
+  background-color: rgb(202, 198, 198);
+}
+.key:hover {
+  background-color: rgb(182, 180, 180);
+  cursor: pointer;
+}
+.key:active {
+  background-color: rgb(134, 133, 133);
+  transform: scale(0.95);
+  border-radius: 4px;
+
+}
+.key.active {
+  background-color: rgb(134, 133, 133);
+  transform: scale(0.95);
+  border-radius: 4px;
+}
+.key-space {
+  width: 460px;
+}
+.key-space:active {
+  transform: scale(0.99);
+}
+.key-tab {
+  width: 80px;
+}
+.key-enter {
+  width: 110px;
+}
+.key._pressed {
+  background-color: rgb(134, 133, 133);
+  transform: scale(0.95);
+  border-radius: 4px;
+  font-size: 23px;
+}
+.key-shift {
+  width: 140px;
+}
+.key-ctrl {
+  width: 98px;
+}
+.key-change-lang {
+  margin-left: 230px;
+}
