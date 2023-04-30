@@ -72,6 +72,12 @@
 .key-enter {
   width: 110px;
 }
+.key._pressed {
+  background-color: rgb(134, 133, 133);
+  transform: scale(0.95);
+  border-radius: 4px;
+  font-size: 23px;
+}
 .key-shift {
   width: 140px;
 }

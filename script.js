@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // window.onload = function() {
 //   // code to generate virtual keyboard goes here
 // };
@@ -7,6 +8,8 @@ textArea.className = 'textarea';
 const osType = document.createElement('span');
 osType.className = 'os-type';
 osType.textContent = 'Created in Windows 10';
+
+let btnCapsLock;
 
 const btnChangeLang = document.createElement('button');
 btnChangeLang.classList.add('key', 'key-change-lang');
@@ -58,9 +61,7 @@ function createKeyboard() {
         key.classList.add('key-enter');
       }
       if (key.textContent === 'Caps Lock') {
-        key.addEventListener('click', () => {
-          key.classList.toggle('_active');
-        });
+        btnCapsLock = key;
       }
       if (key.textContent === 'Shift') {
         key.classList.add('key-shift');
@@ -85,6 +86,18 @@ const bodyAppend = (...items) => {
   items.forEach((item) => document.body.appendChild(item));
 };
 
+btnCapsLock.addEventListener('click', () => {
+  btnCapsLock.classList.toggle('_pressed');
+  const letterKeys = document.querySelectorAll('.key:not(.key-tab):not(.key-enter):not(.key-shift):not(.key-ctrl):not(.key-space):not(.key-change-lang');
+  for (let i = 0; i < letterKeys.length; i += 1) {
+    if (btnCapsLock.classList.contains('_pressed')) {
+      letterKeys[i].textContent = letterKeys[i].textContent.toUpperCase();
+    } else {
+      letterKeys[i].textContent = letterKeys[i].textContent.toLowerCase();
+    }
+  }
+});
+
 btnChangeLang.addEventListener('click', () => {
   document.body.removeChild(keyboard);
   english = !english;
@@ -105,13 +118,6 @@ btnChangeLang.addEventListener('click', () => {
   bodyAppend(currentKeyboard);
 });
 
-// const toggleCapsLock = () => {
-//   if (key.textContent === 'Caps Lock') {
-//     key.addEventListener('click', () => {
-//       key.classList.toggle('_active');
-//     });
-//   }
-// };
 bodyAppend(textArea, osType, btnChangeLang, keyboard);
 
 window.addEventListener('keydown', (event) => {
